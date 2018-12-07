@@ -16,6 +16,7 @@ sipit <name>
 ```
 
 **Purpose:**
+
 An npm drinking game. If `<name>` exists, you take a sip. If `<name>` doesn't exist, you don't. It's pretty simple really.
 
 **Inspiration:**
