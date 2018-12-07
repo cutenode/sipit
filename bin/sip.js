@@ -1,28 +1,27 @@
-let cli = require('commander')
-let chalk = require('chalk')
-let npmname = require('npm-name')
-let pacakgejson = require('../package.json')
+#!/usr/bin/env node
 
-(async () =>
+const cli = require('commander')
+const chalk = require('chalk')
+const npmname = require('npm-name')
+const pjs = require('../package.json')
+
 cli
-  .version(packagejson.version)
-  .command('<name>')
-  .action(function(name){
-    try {
-      let name = await npmname(name)
-    } catch(error) {
-      console.log(error.message)
-    }
+  .version(pjs.version)
+  .usage('<name>')
+  .arguments('<name>')
+  .action(async function(name){
+    var nameInput = await npmname(name)
 
-    if(name === true) {
-      console.log(chalk.green("Take a sip! 🍻"))
+    if(nameInput === false) {
+      console.log()
+      console.log(chalk.yellow(name) + " exists! Take a sip 🍻")
+      console.log()
     }
-
-    if(name === false) {
-      console.log(chalk.green("NO SIP FOR YOU! 🙅🏻‍♀️"))
+    
+    if(nameInput === true) {
+      console.log()
+      console.log(chalk.green(name) + " does not exist. No sip for you 🙅")
+      console.log()
     }
   })
   .parse(process.argv)
-)
-
-console.log('')
