@@ -9,18 +9,18 @@ cli
   .version(pjs.version)
   .usage('<name>')
   .arguments('<name>')
-  .action(async function(name){
+  .action(async function (name) {
     var nameInput = await npmname(name)
 
-    if(nameInput === false) {
+    if (nameInput === false) {
       console.log()
-      console.log(chalk.yellow(name) + " exists! Take a sip 🍻")
+      console.log(chalk.yellow(name) + ' exists! Take a sip 🍻')
       console.log()
     }
-    
-    if(nameInput === true) {
+
+    if (nameInput === true) {
       console.log()
-      console.log(chalk.green(name) + " does not exist. No sip for you 🙅")
+      console.log(chalk.green(name) + ' does not exist. No sip for you 🙅')
       console.log()
     }
   })
