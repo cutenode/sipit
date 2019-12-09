@@ -1,5 +1,7 @@
 # sipit
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cutenode/sipit.svg)](https://greenkeeper.io/)
+
 A CLI-ified version of [the npm drinking game](https://twitter.com/sindresorhus/status/515511151669805056).
 
 **Usage:**
